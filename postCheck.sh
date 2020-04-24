@@ -18,7 +18,7 @@ do
 	wget --quiet -O "$fileName" $line;
 	#Change encoding to UTF8
 	iconv -f ISO-8859-1 -t UTF-8 "$fileName" > "utf8_$fileName";
-	grep -q "$country" "utf8_$fileName";
+	grep -qw "$country" "utf8_$fileName";
 	if [ $? -ne 0 ]
 	then
 		echo "Kein $stopName für $country";
